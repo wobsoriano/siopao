@@ -16,16 +16,14 @@ export class Siopao {
 
     if (!matched) {
       return new Response('Not Found', {
-        status: 404,
-        statusText: `Cannot find any route matching ${request.url || '/'}.`
+        status: 404
       })
     }
 
     const methodMatched = (matched.method === request.method) || matched.method === 'ALL'
     if (!methodMatched) {
       return new Response('Method Not Allowed', {
-        status: 405,
-        statusText: `Method ${request.method} is not allowed on this route.`
+        status: 405
       })
     }
 
