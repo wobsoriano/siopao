@@ -1,5 +1,5 @@
 {
-  "name": "bun-playground",
+  "name": "siopao",
   "version": "0.0.0",
   "main": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
