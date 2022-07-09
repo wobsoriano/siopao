@@ -19,10 +19,10 @@ import Siopao from 'siopao'
 
 const app = new Siopao()
 
-app.use('/ping', () => new Response('pong'))
+app.get('/ping', () => new Response('pong'))
 
 // Named route
-app.use('/path/:name', (request) => {
+app.get('/path/:name', (request) => {
   return Response.json({
     name: request.params.name
   })
