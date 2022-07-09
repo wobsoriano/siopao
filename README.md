@@ -2,7 +2,7 @@
 
 [![npm (tag)](https://img.shields.io/npm/v/siopao?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/siopao) ![NPM](https://img.shields.io/npm/l/siopao?style=flat&colorA=000000&colorB=000000)
 
-A minimal HTTP routing library for Bun (or anything that provides a `Request` object) based on [Radix Tree](https://github.com/unjs/radix3).
+A minimal HTTP routing library for [`Bun`](https://github.com/Jarred-Sumner/bun) (or anything that provides a `Request` object) based on [Radix Tree](https://github.com/unjs/radix3).
 
 ## Installation
 
