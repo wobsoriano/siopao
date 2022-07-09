@@ -1,7 +1,9 @@
 import { createRouter } from "radix3"
 import type { RadixRouter } from "radix3"
 
-type Params = Record<string, string>
+type Params = {
+  params: Record<string, string>
+}
 
 export class App {
   router: RadixRouter

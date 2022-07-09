@@ -11,6 +11,7 @@ app.use('/api/hello', () => {
 })
 
 app.use('/api/user/:name', (request) => {
+  console.log(request.params)
   return Response.json({
     user: 'Robert'
   })
