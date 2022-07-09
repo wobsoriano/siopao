@@ -1,5 +1,7 @@
 # siopao
 
+A minimal HTTP routing library for Bun based on [Radix Tree](https://github.com/unjs/radix3).
+
 ## Installation
 
 ```bash
