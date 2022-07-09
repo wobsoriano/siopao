@@ -30,7 +30,7 @@ export class App {
     }
 
     return new Response(`Cannot find any route matching ${request.url || '/'}`, {
-      status: 400
+      status: 404
     })
   }
 }
