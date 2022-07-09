@@ -5,7 +5,7 @@ type Params = {
   params: Record<string, string>
 }
 
-export class App {
+export class Siopao {
   router: RadixRouter
 
   constructor() {
@@ -35,4 +35,4 @@ export class App {
   }
 }
 
-export default App
+export default Siopao

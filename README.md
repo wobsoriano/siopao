@@ -13,9 +13,9 @@ bun add siopao
 ## Usage
 
 ```ts
-import { App } from 'siopao'
+import Siopao from 'siopao'
 
-const app = new App()
+const app = new Siopao()
 
 app.use('/ping', () => new Response('pong'))
 

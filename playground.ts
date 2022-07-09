@@ -1,6 +1,6 @@
-import { App } from './src'
+import Siopao from './src'
 
-const app = new App()
+const app = new Siopao()
 
 app.use('/ping', () => new Response('pong'))
 
