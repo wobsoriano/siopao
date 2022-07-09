@@ -8,6 +8,9 @@
     "build-fast": "tsup src/index.ts --format esm",
     "build": "bun run build-fast --dts-resolve"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": ["bun", "http", "fetch"],
   "license": "MIT",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
