@@ -1,6 +1,6 @@
 {
   "name": "siopao",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "description": "",
@@ -12,7 +12,11 @@
   "files": [
     "dist"
   ],
-  "keywords": ["bun", "http", "fetch"],
+  "keywords": [
+    "bun",
+    "http",
+    "fetch"
+  ],
   "license": "MIT",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
   "dependencies": {
