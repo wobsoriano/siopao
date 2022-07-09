@@ -18,7 +18,7 @@ export class App {
     })
   }
 
-  fetch(request: Request) {
+  serve(request: Request) {
     const { pathname } = new URL(request.url)
 
     const matched = this.router.lookup(pathname)

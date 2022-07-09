@@ -20,5 +20,5 @@ app.use('/path/foo/**', (request) => {
 
 Bun.serve({
   port: 3000,
-  fetch: (request) => app.fetch(request)
+  fetch: (request) => app.serve(request)
 })
