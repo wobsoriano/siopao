@@ -9,13 +9,13 @@ type Params = {
 export type ServeOptions = Omit<Serve, 'fetch'>
 
 export class Siopao {
-  private router: RadixRouter
+  router: RadixRouter
 
   constructor() {
     this.router = createRouter()
   }
 
-  private serve(request: Request) {
+  serve(request: Request) {
     const { pathname } = new URL(request.url)
 
     const matched = this.router.lookup(pathname)
