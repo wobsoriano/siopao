@@ -19,9 +19,10 @@ const app = new App()
 
 app.use('/ping', () => new Response('pong'))
 
-app.use('/api/hello', () => {
+app.use('/api/user/:name', (request) => {
+  const { name } = request.params
   return Response.json({
-    hello: 'world'
+    hello: name
   })
 })
 
