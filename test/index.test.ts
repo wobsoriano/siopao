@@ -6,7 +6,7 @@ const app = new Siopao()
 app.get('/ping', () => new Response('pong'))
 
 describe('Siopao', () => {
-  it('returns correct data', async () => {
+  it('returns 200 status and data', async () => {
     let server: Server
     try {
       server = app.serve()
