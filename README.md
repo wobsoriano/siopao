@@ -33,10 +33,7 @@ app.use('/path/foo/**', (request) => {
   })
 })
 
-Bun.serve({
-  port: 3000,
-  fetch: (request) => app.serve(request)
-})
+app.listen()
 ```
 
 ## License
