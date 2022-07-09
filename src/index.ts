@@ -1,24 +1,21 @@
 import { createRouter } from "radix3"
 import type { RadixRouter } from "radix3"
+import type { Serve } from "bun"
 
 type Params = {
   params: Record<string, string>
 }
 
+export type ServeOptions = Omit<Serve, 'fetch'>
+
 export class Siopao {
-  router: RadixRouter
+  private router: RadixRouter
 
   constructor() {
     this.router = createRouter()
   }
 
-  use(path: string, handler: (request: Request & Params) => Response) {
-    this.router.insert(path, {
-      handler
-    })
-  }
-
-  serve(request: Request) {
+  private serve(request: Request) {
     const { pathname } = new URL(request.url)
 
     const matched = this.router.lookup(pathname)
@@ -31,6 +28,19 @@ export class Siopao {
 
     return new Response(`Cannot find any route matching ${request.url || '/'}`, {
       status: 404
+    })
+  }
+
+  use(path: string, handler: (request: Request & Params) => Response) {
+    this.router.insert(path, {
+      handler
+    })
+  }
+
+  listen(options: ServeOptions = {}) {
+    return Bun.serve({
+      ...options,
+      fetch: (request) => this.serve(request)
     })
   }
 }
