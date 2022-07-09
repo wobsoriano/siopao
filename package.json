@@ -11,7 +11,7 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "description": "",
+  "description": "A minimal HTTP routing library for Bun based on Radix Tree.",
   "scripts": {
     "build-fast": "tsup src/index.ts --format cjs,esm",
     "build": "bun run build-fast --dts-resolve",
