@@ -35,11 +35,11 @@ app.use('/path/foo/**', (request) => {
   })
 })
 
-// Same as Bun.serve options but without the fetch property
+// Same as Bun.serve options but without the fetch option
 app.serve({ port: 3000 })
 ```
 
-If you have custom logic to add inside Bun's fetch config, you can use the `fetch` method instead:
+If you have custom logic to add inside Bun's fetch option, you can use the `fetch` method instead:
 
 ```ts
 const app = new Siopao()
