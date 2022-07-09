@@ -18,4 +18,4 @@ app.use('/path/foo/**', (request) => {
   })
 })
 
-app.listen()
+app.serve()

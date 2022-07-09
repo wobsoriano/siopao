@@ -36,7 +36,7 @@ app.use('/path/foo/**', (request) => {
 })
 
 // Pass Bun.serve options here
-app.listen({ port: 3000 })
+app.serve({ port: 3000 })
 ```
 
 ## License

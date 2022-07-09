@@ -9,7 +9,7 @@ export class Siopao {
     this.router = createRouter()
   }
 
-  serve(request: Request) {
+  fetch(request: Request) {
     const { pathname } = new URL(request.url)
 
     const matched = this.router.lookup(pathname)
@@ -61,10 +61,10 @@ export class Siopao {
     this.use(path, handler, 'DELETE')
   }
 
-  listen(options: ServeOptions = {}) {
+  serve(options: ServeOptions = {}) {
     return Bun.serve({
       ...options,
-      fetch: (request) => this.serve(request)
+      fetch: (request) => this.fetch(request)
     })
   }
 }
