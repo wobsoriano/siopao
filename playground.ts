@@ -4,16 +4,17 @@ const app = new App()
 
 app.use('/ping', () => new Response('pong'))
 
-app.use('/api/hello', () => {
+// Named route
+app.use('/path/:name', (request) => {
   return Response.json({
-    hello: 'world'
+    name: request.params.name
   })
 })
 
-app.use('/api/user/:name', (request) => {
-  console.log(request.params)
+// Wildcard route
+app.use('/path/foo/**', (request) => {
   return Response.json({
-    user: 'Robert'
+    name: request.params
   })
 })
 

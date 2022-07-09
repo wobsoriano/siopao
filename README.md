@@ -19,10 +19,17 @@ const app = new App()
 
 app.use('/ping', () => new Response('pong'))
 
-app.use('/api/user/:name', (request) => {
-  const { name } = request.params
+// Named route
+app.use('/path/:name', (request) => {
   return Response.json({
-    hello: name
+    name: request.params.name
+  })
+})
+
+// Wildcard route
+app.use('/path/foo/**', (request) => {
+  return Response.json({
+    name: request.params
   })
 })
 
