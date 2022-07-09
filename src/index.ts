@@ -1,6 +1,8 @@
 import { createRouter } from "radix3"
 import type { RadixRouter } from "radix3"
 
+type Params = Record<string, string>
+
 export class App {
   router: RadixRouter
 
@@ -8,7 +10,7 @@ export class App {
     this.router = createRouter()
   }
 
-  use(path: string, handler: () => Response) {
+  use(path: string, handler: (request: Request & Params) => Response) {
     this.router.insert(path, {
       handler
     })
@@ -17,10 +19,12 @@ export class App {
   fetch(request: Request) {
     const { pathname } = new URL(request.url)
 
-    const result = this.router.lookup(pathname)
+    const matched = this.router.lookup(pathname)
 
-    if (result) {
-      return result.handler() as Response
+    if (matched) {
+      // @ts-ignore: Added params
+      request.params = matched.params || {}
+      return matched.handler(request) as Response
     }
 
     return new Response(`Cannot find any route matching ${request.url || '/'}`, {

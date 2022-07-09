@@ -10,7 +10,7 @@ app.use('/api/hello', () => {
   })
 })
 
-app.use('/api/user/:name', () => {
+app.use('/api/user/:name', (request) => {
   return Response.json({
     user: 'Robert'
   })
