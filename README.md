@@ -29,7 +29,7 @@ app.use('/path/:name', (request) => {
 // Wildcard route
 app.use('/path/foo/**', (request) => {
   return Response.json({
-    name: request.params
+    params: request.params
   })
 })
 
