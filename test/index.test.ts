@@ -20,12 +20,13 @@ describe('Siopao', () => {
     }
   })
 
-  it('returns 404 status', async () => {
+  it('returns 404 status with message', async () => {
     let server: Server
     try {
       server = app.serve()
       const response = await fetch('http://localhost:3000/404')
       expect(response.status).toBe(404)
+      expect(await response.text()).toBe('Not Found')
     } catch (e) {
       throw e
     } finally {
@@ -33,12 +34,13 @@ describe('Siopao', () => {
     }
   })
 
-  it('returns 405 status', async () => {
+  it('returns 405 status with message', async () => {
     let server: Server
     try {
       server = app.serve()
       const response = await fetch('http://localhost:3000/ping', { method: 'POST' })
       expect(response.status).toBe(405)
+      expect(await response.text()).toBe('Method Not Allowed')
     } catch (e) {
       throw e
     } finally {
