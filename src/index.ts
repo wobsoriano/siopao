@@ -1,6 +1,6 @@
 import { createRouter } from "radix3"
 import type { RadixRouter } from "radix3"
-import type { Serve } from "bun"
+import type { Handler, HTTPMethod, ServeOptions } from "./types"
 
 export class Siopao {
   router: RadixRouter
@@ -70,13 +70,3 @@ export class Siopao {
 }
 
 export default Siopao
-
-type Params = {
-  params: Record<string, string>
-}
-
-export type ServeOptions = Omit<Serve, 'fetch'>
-
-export type Handler = (request: Request & Params) => Response
-
-export type HTTPMethod = 'GET' | 'PATCH' | 'POST' | 'PUT' | 'DELETE'
