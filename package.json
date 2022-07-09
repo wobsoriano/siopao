@@ -6,7 +6,8 @@
   "description": "",
   "scripts": {
     "build-fast": "tsup src/index.ts --format esm",
-    "build": "bun run build-fast --dts-resolve"
+    "build": "bun run build-fast --dts-resolve",
+    "release": "bumpp --commit --push --tag && bun run publish"
   },
   "files": [
     "dist"
