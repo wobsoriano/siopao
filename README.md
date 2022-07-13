@@ -30,12 +30,12 @@ app.get('/path/:name', (request) => {
 
 // Wildcard route
 app.use('/path/foo/**', (request) => {
-  return Response.json('Wildcard route')
+  return new Response('Wildcard route')
 })
 
 // Named Wildcard route
 app.use('/path/foo/**:name', (request) => {
-  return Response.json('Named Wildcard route')
+  return new Response('Named Wildcard route')
 })
 
 // Same as Bun.serve options but without the fetch option
