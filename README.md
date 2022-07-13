@@ -30,9 +30,12 @@ app.get('/path/:name', (request) => {
 
 // Wildcard route
 app.use('/path/foo/**', (request) => {
-  return Response.json({
-    params: request.params
-  })
+  return Response.json('Wildcard route')
+})
+
+// Named Wildcard route
+app.use('/path/foo/**:name', (request) => {
+  return Response.json('Named Wildcard route')
 })
 
 // Same as Bun.serve options but without the fetch option
@@ -55,6 +58,8 @@ Bun.serve({
   }
 })
 ```
+
+For a more complete web framework for the Bun runtime, see [Bao.js](https://github.com/mattreid1/baojs).
 
 ## License
 
