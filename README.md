@@ -40,6 +40,11 @@ app.use('/path/foo/**:name', (request) => {
 
 // Same as Bun.serve options but without the fetch option
 app.serve({ port: 3000 })
+
+// Callback style
+app.serve({ port: 3000 }, () => {
+  console.log('Listening on port 3000...')
+})
 ```
 
 If you have custom logic to add inside Bun's fetch option, you can use the `fetch` method instead:
