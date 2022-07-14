@@ -38,10 +38,6 @@ app.use('/path/foo/**:name', (request) => {
   return new Response('Named Wildcard route')
 })
 
-// Same as Bun.serve options but without the fetch option
-app.serve({ port: 3000 })
-
-// Callback style
 app.serve({ port: 3000 }, () => {
   console.log('Listening on port 3000...')
 })
