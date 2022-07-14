@@ -59,11 +59,15 @@ export class Siopao {
     this.use(path, handler, 'DELETE')
   }
 
-  serve(options: ServeOptions = {}) {
-    return Bun.serve({
+  serve(options: ServeOptions = {}, cb?: () => void) {
+    const server = Bun.serve({
       ...options,
       fetch: (request) => this.fetch(request)
     })
+
+    cb?.()
+
+    return server
   }
 }
 
