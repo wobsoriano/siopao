@@ -59,6 +59,11 @@ export class Siopao {
     this.use(path, handler, 'DELETE')
   }
 
+  /**
+   * Render a template
+   * @param options Bun server options
+   * @param cb Server callback after server starts listening
+   */
   serve(options: ServeOptions = {}, cb?: () => void) {
     const server = Bun.serve({
       ...options,
