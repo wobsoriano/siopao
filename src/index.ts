@@ -60,7 +60,6 @@ export class Siopao {
   }
 
   /**
-   * Render a template
    * @param options Bun server options
    * @param cb Server callback after server starts listening
    */
