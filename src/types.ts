@@ -1,4 +1,4 @@
-import type { Serve } from "bun"
+import type { Serve } from 'bun'
 
 export type Params = {
   params: Record<string, string>

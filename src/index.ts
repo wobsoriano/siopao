@@ -1,6 +1,6 @@
-import { createRouter } from "radix3"
-import type { RadixRouter } from "radix3"
-import type { Handler, HTTPMethod, ServeOptions } from "./types"
+import { createRouter } from 'radix3'
+import type { RadixRouter } from 'radix3'
+import type { Handler, HTTPMethod, ServeOptions } from './types'
 
 export class Siopao {
   router: RadixRouter
@@ -67,7 +67,7 @@ export class Siopao {
   serve(options: ServeOptions = {}, cb?: () => void) {
     const server = Bun.serve({
       ...options,
-      fetch: (request) => this.fetch(request)
+      fetch: (request) => this.fetch(request),
     })
 
     cb?.()

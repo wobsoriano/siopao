@@ -1,5 +1,5 @@
-import type { Server } from "bun"
-import { describe, expect, it } from "bun:test"
+import type { Server } from 'bun'
+import { describe, expect, it } from 'bun:test'
 import Siopao from '../src'
 
 const app = new Siopao()
