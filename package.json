@@ -30,7 +30,7 @@
   "license": "MIT",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
   "dependencies": {
-    "radix3": "^0.2.1"
+    "radix3": "^1.0.0"
   },
   "devDependencies": {
     "bun-types": "^0.2.1",
