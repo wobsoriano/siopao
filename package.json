@@ -17,7 +17,7 @@
     "build": "bun run build-fast --dts-resolve",
     "release": "bumpp --commit --push --tag && npm publish",
     "prepublishOnly": "bun run build",
-    "test": "bun wiptest"
+    "test": "bun test"
   },
   "files": [
     "dist"
