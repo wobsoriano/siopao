@@ -3,6 +3,10 @@ import type { RadixRouter } from 'radix3'
 import type { Handler, HTTPMethod, ServeOptions } from './types'
 import type { Server } from 'bun'
 
+interface SiopaoRequest extends Request {
+  params?: Record<string, any>
+}
+
 export class Siopao {
   router: RadixRouter
 
@@ -10,7 +14,7 @@ export class Siopao {
     this.router = createRouter()
   }
 
-  fetch(request: Request) {
+  fetch(request: SiopaoRequest) {
     const { pathname } = new URL(request.url)
 
     const matched = this.router.lookup(pathname)
@@ -28,7 +32,6 @@ export class Siopao {
       })
     }
 
-    // @ts-ignore: Added params
     request.params = matched.params || {}
     return matched.handler(request) as Response
   }
