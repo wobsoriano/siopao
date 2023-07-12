@@ -60,7 +60,7 @@ Bun.serve({
 })
 ```
 
-For a more complete web framework for the Bun runtime, see [Bao.js](https://github.com/mattreid1/baojs).
+For a more complete fully type-safe web framework, check out [Elysia](https://elysiajs.com/).
 
 ## License
 
