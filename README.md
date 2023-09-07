@@ -2,7 +2,7 @@
 
 [![npm (tag)](https://img.shields.io/npm/v/siopao?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/siopao) ![NPM](https://img.shields.io/npm/l/siopao?style=flat&colorA=000000&colorB=000000)
 
-A minimal routing library designed to sit on top of [Bun](https://github.com/Jarred-Sumner/bun)'s [fast HTTP server](https://github.com/Jarred-Sumner/bun#bunserve---fast-http-server). Based on [Radix Tree](https://github.com/unjs/radix3).
+A minimal routing library designed to sit on top of [Bun](https://github.com/Jarred-Sumner/bun)'s [fast HTTP server](https://bun.sh/docs/api/http). Based on [Radix Tree](https://github.com/unjs/radix3).
 
 Sio=Hot Pao=Bun
 
@@ -60,7 +60,7 @@ Bun.serve({
 })
 ```
 
-For a more complete web framework for the Bun runtime, see [Bao.js](https://github.com/mattreid1/baojs).
+For a more complete fully type-safe web framework, check out [Elysia](https://elysiajs.com/).
 
 ## License
 
