@@ -1,14 +1,13 @@
 import { createRouter } from 'radix3'
 import type { RadixRouter } from 'radix3'
-import type { Handler, HTTPMethod, ServeOptions } from './types'
+import type { Handler, HTTPMethod, ServeOptions, SiopaoRequest } from './types'
 import type { Server } from 'bun'
 
-interface SiopaoRequest extends Request {
-  params?: Record<string, any>
-}
-
 export class Siopao {
-  router: RadixRouter
+  router: RadixRouter<{
+    method: HTTPMethod | 'ALL'
+    handler: (request: SiopaoRequest) => Response
+  }>
 
   constructor() {
     this.router = createRouter()
@@ -33,33 +32,33 @@ export class Siopao {
     }
 
     request.params = matched.params || {}
-    return matched.handler(request) as Response
+    return matched.handler(request)
   }
 
-  use(path: string, handler: Handler, method?: HTTPMethod) {
+  use<T extends string>(path: T, handler: Handler<T>, method?: HTTPMethod) {
     this.router.insert(path, {
       handler,
       method: method || 'ALL'
     })
   }
 
-  get(path: string, handler: Handler) {
+  get<T extends string>(path: T, handler: Handler<T>) {
     this.use(path, handler, 'GET')
   }
 
-  post(path: string, handler: Handler) {
+  post<T extends string>(path: T, handler: Handler<T>) {
     this.use(path, handler, 'POST')
   }
 
-  put(path: string, handler: Handler) {
+  put<T extends string>(path: T, handler: Handler<T>) {
     this.use(path, handler, 'PUT')
   }
 
-  patch(path: string, handler: Handler) {
+  patch<T extends string>(path: T, handler: Handler<T>) {
     this.use(path, handler, 'PATCH')
   }
 
-  delete(path: string, handler: Handler) {
+  delete<T extends string>(path: T, handler: Handler<T>) {
     this.use(path, handler, 'DELETE')
   }
 
