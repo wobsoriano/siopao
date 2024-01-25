@@ -12,6 +12,6 @@ export interface SiopaoRequest<T extends string = ''> extends Request {
   params?: Record<ParamsFromUrl<T>, string>
 }
 
-export type Handler<T extends string> = (request: SiopaoRequest<T>) => Response
+export type Handler<T extends string> = (request: SiopaoRequest<T>) => Response | Promise<Response>
 
 export type HTTPMethod = 'GET' | 'PATCH' | 'POST' | 'PUT' | 'DELETE'
