@@ -33,9 +33,9 @@
     "radix3": "^1.1.0"
   },
   "devDependencies": {
-    "bumpp": "^9.2.0",
-    "bun-types": "^1.0.1",
-    "tsup": "^7.2.0",
+    "bumpp": "^9.3.0",
+    "@types/bun": "^1.0.4",
+    "tsup": "^8.0.1",
     "typescript": "^5.2.2"
   }
 }
