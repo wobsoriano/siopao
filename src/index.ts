@@ -78,3 +78,5 @@ export class Siopao {
     return server
   }
 }
+
+export default Siopao

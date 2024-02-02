@@ -1,6 +1,6 @@
 import type { Server } from 'bun'
 import { describe, expect, it } from 'bun:test'
-import Siopao from '../src'
+import { Siopao } from '../src'
 
 const app = new Siopao()
 app.get('/ping', () => new Response('pong'))

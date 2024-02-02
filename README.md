@@ -15,7 +15,7 @@ bun add siopao
 ## Usage
 
 ```ts
-import Siopao from 'siopao'
+import { Siopao } from 'siopao'
 
 const app = new Siopao()
 
