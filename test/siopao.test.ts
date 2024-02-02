@@ -15,7 +15,7 @@ describe('Siopao', () => {
     let server: Server
     try {
       server = app.serve()
-      const response = await fetch('http://0.0.0.0:3000/ping')
+      const response = await fetch('http://localhost:3000/ping')
       expect(response.status).toBe(200)
       expect(await response.text()).toBe('pong')
     } catch (e) {
@@ -29,7 +29,7 @@ describe('Siopao', () => {
     let server: Server
     try {
       server = app.serve()
-      const response = await fetch('http://0.0.0.0:3000/404')
+      const response = await fetch('http://localhost:3000/404')
       expect(response.status).toBe(404)
       expect(await response.text()).toBe('Not Found')
     } catch (e) {
@@ -43,7 +43,7 @@ describe('Siopao', () => {
     let server: Server
     try {
       server = app.serve()
-      const response = await fetch('http://0.0.0.0:3000/ping', { method: 'POST' })
+      const response = await fetch('http://localhost:3000/ping', { method: 'POST' })
       expect(response.status).toBe(405)
       expect(await response.text()).toBe('Method Not Allowed')
     } catch (e) {
