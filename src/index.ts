@@ -2,6 +2,7 @@ import { createRouter } from 'radix3'
 import type { RadixRouter } from 'radix3'
 import type { Handler, HTTPMethod, ServeOptions, SiopaoRequest } from './types'
 import type { Server } from 'bun'
+import { serve } from 'bun'
 
 export class Siopao {
   router: RadixRouter<{
@@ -67,7 +68,7 @@ export class Siopao {
    * @param cb Server callback after server starts listening
    */
   serve(options: ServeOptions = {}, cb?: (server: Server) => void) {
-    const server = Bun.serve({
+    const server = serve({
       ...options,
       fetch: (request) => this.fetch(request),
     })
@@ -77,5 +78,3 @@ export class Siopao {
     return server
   }
 }
-
-export default Siopao
