@@ -1,8 +1,8 @@
 import { createRouter } from 'radix3'
 import type { RadixRouter } from 'radix3'
-import type { Handler, HTTPMethod, ServeOptions, SiopaoRequest } from './types'
-import type { Server } from 'bun'
-import { serve } from 'bun'
+import type { Handler, HTTPMethod, ServeWithoutFetch, SiopaoRequest } from './types'
+
+import { Serve, serve } from 'bun'
 
 export class Siopao {
   router: RadixRouter<{
@@ -67,7 +67,7 @@ export class Siopao {
    * @param options Bun server options
    * @param cb Server callback after server starts listening
    */
-  serve(options: ServeOptions = {}, cb?: (server: Server) => void) {
+  serve<WebSocketDataType = undefined>(options?: ServeWithoutFetch<WebSocketDataType>, cb?: (server: Serve) => void) {
     const server = serve({
       ...options,
       fetch: (request) => this.fetch(request),
