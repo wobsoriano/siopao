@@ -5,6 +5,11 @@ import Siopao from '../src'
 const app = new Siopao()
 app.get('/ping', () => new Response('pong'))
 
+app.get('/slow-ping', async () => {
+	await Bun.sleep(100)
+	return new Response('poong')
+});
+
 describe('Siopao', () => {
   it('returns 200 status and data', async () => {
     let server: Server
