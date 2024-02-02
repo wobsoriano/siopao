@@ -6,7 +6,7 @@ import type { Server } from 'bun'
 export class Siopao {
   router: RadixRouter<{
     method: HTTPMethod | 'ALL'
-    handler: (request: SiopaoRequest) => Response
+    handler: (request: SiopaoRequest) => Response | Promise<Response>
   }>
 
   constructor() {
